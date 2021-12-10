@@ -116,7 +116,7 @@ if __name__=="__main__":
         minute = input("\tminute: ") or 5
 
     # Schedule task
-    scheduler = BlockingScheduler()
+    scheduler = BlockingScheduler(timezone="Asia/Shanghai")
     scheduler.add_job(main, 'cron', args=[username, password], hour=hour, minute=minute)
     print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C'))
 
